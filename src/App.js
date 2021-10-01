@@ -1,17 +1,27 @@
 import React from 'react';
 import './App.css';
 import MapComponent from "./components/Map";
-import {Provider} from "react-redux";
-import store from "./redux/redux-store";
+import {useDispatch} from "react-redux";
+import {setAllVisibleAction, setInvisibleAction} from "./redux/map-reducer";
 
 function App() {
+    const dispatch = useDispatch()
+
     return (
-        <Provider store={store}>
-            <div className="App">
-                <MapComponent/>
+        <div className="App">
+            <MapComponent/>
+            <div>
+                <button onClick={() => {
+                    dispatch(setAllVisibleAction())
+                }}>Reload
+                </button>
+                <button onClick={() => {
+                    dispatch(setInvisibleAction(prompt()))
+                }}>Invisible
+                </button>
             </div>
-        </Provider>
+        </div>
     );
 }
 
-export default  App;
+export default App;
