@@ -48,6 +48,10 @@
   box-shadow: 0 0 0 2px  rgba(0,0,0,0.22);
 }
 
+.export__close {
+  color: red;
+}
+
 .reset {
   position: absolute;
   bottom: 15px;

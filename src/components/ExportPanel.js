@@ -20,7 +20,7 @@ const ExportPanel = () => {
             На экспорт:
             <div>
                 {exportList}
-                {exportStore.objects.length < 1 && <div onClick={()=>{dispatch(setInvisibleAction())}}>Закрыть</div>}
+                {exportStore.objects.length < 1 && <div className="export__close" onClick={()=>{dispatch(setInvisibleAction())}}>Закрыть</div>}
             </div>
             <button className="btn btn-success" onClick={() => {
                 exportObj(exportStore.objects.map(({visible, ...rest}) => rest))
