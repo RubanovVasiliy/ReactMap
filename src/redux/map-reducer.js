@@ -1,4 +1,4 @@
-import {INIT_MAP, SET_ALL_VISIBLE, SET_INVISIBLE} from "./types";
+import {MAP_INIT_MAP, MAP_SET_ALL_VISIBLE, MAP_SET_INVISIBLE} from "./types";
 
 let initialState = {
     lat: 55.004505,
@@ -9,7 +9,7 @@ let initialState = {
 
 const mapReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INIT_MAP: {
+        case MAP_INIT_MAP: {
             return {
                 ...state, objects: action.payload.map(o => {
                     o.visible = true
@@ -17,7 +17,7 @@ const mapReducer = (state = initialState, action) => {
                 })
             }
         }
-        case SET_ALL_VISIBLE: {
+        case MAP_SET_ALL_VISIBLE: {
             return {
                 ...state, objects: state.objects.map(o => {
                     o.visible = true
@@ -25,7 +25,7 @@ const mapReducer = (state = initialState, action) => {
                 })
             }
         }
-        case SET_INVISIBLE: {
+        case MAP_SET_INVISIBLE: {
             return {
                 ...state, objects: state.objects.map(o => {
                     if (o.id.toString() === action.payload.toString()) {
@@ -40,9 +40,10 @@ const mapReducer = (state = initialState, action) => {
             return state
     }
 }
-export const initialMapAction = (payload) => ({type: INIT_MAP, payload})
-export const setAllVisibleAction = () => ({type: SET_ALL_VISIBLE})
-export const setInvisibleAction = (payload) => ({type: SET_INVISIBLE, payload})
+
+export const initialMapAction = (payload) => ({type: MAP_INIT_MAP, payload})
+export const setAllVisibleAction = () => ({type: MAP_SET_ALL_VISIBLE})
+export const setInvisibleAction = (payload) => ({type: MAP_SET_INVISIBLE, payload})
 
 
 export default mapReducer

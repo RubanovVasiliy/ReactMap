@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.export {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  z-index: 10;
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 0 0 2px  rgba(0,0,0,0.22);
+}
+
+.reset {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 6;
+}

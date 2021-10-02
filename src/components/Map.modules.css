@@ -3,17 +3,21 @@
 body,
 #root,
 .leaflet-container {
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
   font-size: 15px;
   text-align: left;
+  z-index: 5;
 }
 
 .property {
   color: dodgerblue;
 }
+.button-block {
 
-button {
-  margin: 5px;
-  width: 150px;
+}
+
+button.button-popup{
+  margin: 5px 0;
+  width: 100%;
 }

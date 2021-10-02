@@ -2,9 +2,11 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 import mapReducer from "./map-reducer";
 import {logger} from "redux-logger/src";
 import thunk from "redux-thunk";
+import exportReducer from "./export-reducer";
 
 let rootReducer = combineReducers({
-    map: mapReducer
+    map: mapReducer,
+    export: exportReducer
 })
 
 const composeEnhancers =
